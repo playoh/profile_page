@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TEST</title>
+    <style>
+      /* 말풍선 스타일 */
+      .bubble {
+        display: inline-block;
+        position: relative;
+        background-color: #6a6f73; /* 말풍선 배경색 */
+        color: white; /* 텍스트 색상 */
+        border-radius: 20px; /* 둥근 모서리 */
+        padding: 10px 20px; /* 내부 여백 */
+        font-size: 14px; /* 글자 크기 */
+        font-weight: bold; /* 글자 굵기 */
+        text-align: center;
+      }
+
+      /* 아래 화살표 스타일 */
+      .bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -10px; /* 말풍선 아래쪽으로 위치 */
+        left: 50%; /* 말풍선 중앙 정렬 */
+        transform: translateX(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-color: #6a6f73 transparent transparent transparent; /* 화살표 색상 */
+      }
+
+      /* 말풍선 컨테이너 예시 */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* 화면 높이 전체 사용 */
+        background-color: #2c2f33; /* 배경색 */
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="bubble">상태 추가하기</div>
+    </div>
+  </body>
+</html>
