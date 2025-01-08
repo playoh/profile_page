@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personal profile - YeonJu</title>
+    <style>
+      body{
+        background-color: #2c2f33;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      /*전체 틀 */
+      .Card{
+        width: 700px;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #23272a;
+        box-shadow: 1 4px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+      .top_box{
+        height: 220px;
+        background-color: #4e5d94;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /*말풍선*/
+      .chat{
+        background-color: #3c4048;
+        border-radius:22px;
+        padding: 10px;
+        margin-left: 40px;
+      }
+      .chat_circle{
+        width: 40px;
+        height: 22px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        background-color: #3c4048;
+        position: relative;
+        margin-top: 90px;
+        margin-left: -220px;
+      }
+      .circle{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: #3c4048;
+        margin-top: 35px;
+        margin-left: -20px;
+      }
+      .chat p{
+        font-size: 25px; 
+        font-weight: bold; 
+        padding: 10px;
+        margin: 0;
+      }
+      /*이미지 설정정*/
+      .pic{
+        height: 210px;
+        width: 210px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 16px solid #23272a;
+        margin: 25px;
+        margin-left: -220px;
+        margin-top: 200px;
+      }
+      .pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+      }
+      /*글자*/
+      .text{
+        padding-top: 100px;
+        padding-left: 50px;
+      }
+      .text h1{
+        font-size: 50px;
+        margin: 0;
+      }
+      .text p{
+        font-size: 20px;
+        margin: 0;
+        padding-left: 8px;
+        padding-top: 10px;
+      }
+      /* 온라인 표기 */
+      .status_dot {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-top: -60px;
+        margin-left: 160px;
+        border: 12px solid #23272a;
+        background-color: green;
+        margin-right: 5px;
+        position: absolute;
+      }
+      /*전체 버튼*/
+      .button_group{
+        display: flex;
+        padding: 20px 40px 40px 40px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+      .button_1{
+        border: none;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #3c4048;
+        color:#B5BAC1;
+        font-size: 24px;
+        text-align: left;
+        cursor: pointer;
+      }
+      .button_2{
+        border: none;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #3c4048;
+        color: #B5BAC1;
+        font-size: 24px;
+        text-align: left;
+        cursor: pointer;
+      }
+      .button_3{
+        border: none;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: #3c4048;
+        color: #B5BAC1;
+        font-size: 24px;
+        text-align: left;
+        cursor: pointer;
+      }
+      .button_1:hover, .button_2:hover, .button_3:hover{
+        background-color: #4e535b;
+      }
+      /*아이콘*/
+      .bxs--pencil {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding-right: 10px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23B5BAC1' d='M8.707 19.707L18 10.414L13.586 6l-9.293 9.293a1 1 0 0 0-.263.464L3 21l5.242-1.03c.176-.044.337-.135.465-.263M21 7.414a2 2 0 0 0 0-2.828L19.414 3a2 2 0 0 0-2.828 0L15 4.586L19.414 9z'/%3E%3C/svg%3E");
+      }
+      .fa-solid--book {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding-right: 20px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23B5BAC1' d='M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7c-4.2-15.4-4.2-59.3 0-74.7c5.4-4.3 8.9-11.1 8.9-18.6M128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6zm253.4 250H96c-17.7 0-32-14.3-32-32c0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64'/%3E%3C/svg%3E");
+      }
+      .lets-icons--flag-fill {
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        padding-right: 10px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath fill='%23B5BAC1' d='M16.577 8.526L6.658 5.219c-.3-.1-.45-.15-.554-.075S6 5.377 6 5.694V13l10.577-3.526c.588-.196.882-.294.882-.474s-.294-.278-.882-.474'/%3E%3Cpath stroke='%23B5BAC1' stroke-linecap='round' stroke-width='1.5' d='M6 13V5.694c0-.317 0-.475.104-.55s.254-.025.554.075l9.919 3.307c.588.196.882.294.882.474s-.294.278-.882.474zm0 0v6'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      .tabler--chevron-right {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-top: -30px;
+        padding-left: 1100px;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23B5BAC1' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m9 6l6 6l-6 6'/%3E%3C/svg%3E");
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="Card">
+      <div class="top_box">
+        <div class="pic"><img src="profile.jpg">
+          <div class="status_dot"></div>
+        </div>
+        <div class="chat"><p>13기 FRONTEND !</p></div>
+        <div class="chat_circle">
+          <div class="circle"></div></div>
+      </div>
+      
+      <div class="text">
+        <h1>오연주</h1>
+        <p>YeonJu #1234</p>
+      </div>
+
+      <div class="button_group">
+        <button class="button_1" onclick="location.href='PG01.html'"><span class="bxs--pencil"></span><span>프로필 보기</span><span class="tabler--chevron-right"></span></button>
+        <button class="button_2" onclick="location.href='PG02.html'"><span class="fa-solid--book"></span>TMI<span class="tabler--chevron-right"></span></button>
+        <button class="button_3" onclick="location.href='PG03.html'"><span class="lets-icons--flag-fill"></span>방학 목표<span class="tabler--chevron-right"></span></button>
+      </div>
+    </div>
+  </body>
+</html>
+    
